@@ -7,7 +7,7 @@ const ContactUs = () => {
         <div className='content-center p-16' style={{background: `url(${bg})`}}>
                 
                 <div className='text-center'> 
-                    <p className='font-bold text-xl text-primary'>Contact Us</p>
+                    <p className='font-bold text-xl text-secondary'>Contact Us</p>
                     <h2 className='text-4xl text-white'>Stay connected with us</h2>
                 </div>
 

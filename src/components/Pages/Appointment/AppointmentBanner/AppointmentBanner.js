@@ -6,11 +6,9 @@ import { DayPicker } from 'react-day-picker';
 
 const AppointmentBanner = ({selectedDate, setSelectedDate}) => {
 
-    
-
 
     return (
-        <div className="hero pt-16 pb-20 sm:pt-16 sm:pb-20 md:pt-20 md:pb-44 lg:pt-24 lg:pb-52" style={{background:`url(${bgChair})`, backgroundSize: 'cover'}}>
+        <div className="hero py-16 sm:py-16 md:py-20 lg:py-24" style={{background:`url(${bgChair})`, backgroundSize: 'cover'}}>
             <div className="hero-content flex-col
             md:flex-row-reverse lg:flex-row-reverse">
                 <img className='w-full sm:w-full md:w-1/2 lg:w-1/2 rounded-lg shadow-2xl' src={chair} alt="patient's bed chair"/>

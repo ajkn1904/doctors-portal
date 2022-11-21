@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Toaster } from 'react-hot-toast';
 import AppointmentBanner from './AppointmentBanner/AppointmentBanner';
 import AvailableAppointment from './AvailableAppointment/AvailableAppointment';
 
@@ -11,6 +12,7 @@ const Appointment = () => {
             <AppointmentBanner selectedDate={selectedDate} setSelectedDate={setSelectedDate}></AppointmentBanner>
 
             <AvailableAppointment selectedDate={selectedDate}></AvailableAppointment>
+            <Toaster></Toaster>
         </div>
     );
 };

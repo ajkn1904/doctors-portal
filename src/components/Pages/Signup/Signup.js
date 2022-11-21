@@ -21,7 +21,6 @@ const Signup = () => {
     }
 
     const handleProfile = (data) => {
-        console.log(data)
 
         const userInfo = {
             displayName: data.name
@@ -38,7 +37,6 @@ const Signup = () => {
 
     const handleSignUp = (data) => 
     {
-        console.log(data)
 
         if(data.password !== data.confirmPassword){
             setSignUpError('Your password did not match.')
@@ -50,7 +48,6 @@ const Signup = () => {
         .then(result => {
                 const user = result.user;
                 toast.success('Sign Up Successful')
-                console.log(user)
                 handleProfile(data)
                 navigate(from, {replace: true})
 

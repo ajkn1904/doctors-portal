@@ -1,7 +1,7 @@
-import { async } from '@firebase/util';
 import { useQuery } from '@tanstack/react-query';
 import React, { useContext } from 'react';
 import { AuthContext } from '../../Contexts/AuthProvider';
+import Loading from '../../Loading/Loading';
 
 const Dashboard = () => {
 
@@ -9,7 +9,7 @@ const Dashboard = () => {
 
     const url = `http://localhost:5000/bookings?email=${user?.email}`
 
-    const {data: bookings = []} = useQuery({
+    const {data: bookings = [], isLoading} = useQuery({
         queryKey: ['bookings', user?.email],
         queryFn: async () => {
             const res = await fetch(url, {
@@ -21,6 +21,10 @@ const Dashboard = () => {
             return data
         } 
     })
+
+    if(isLoading){
+        return <Loading></Loading>
+    }
 
     return (
         <div className='p-5 sm:p-5 md:p-8 lg:p-14 my-5'>
@@ -42,7 +46,7 @@ const Dashboard = () => {
                 <tbody>
                     
                 { bookings && 
-                bookings.map((booking, i) => <tr key={booking._id} className="hover">
+                bookings?.map((booking, i) => <tr key={booking._id} className="hover">
                     <th>{[i+1]}</th>
                     <td>{booking.name}</td>
                     <td>{booking.email}</td>

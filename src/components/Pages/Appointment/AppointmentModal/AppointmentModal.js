@@ -1,6 +1,6 @@
 import { format } from 'date-fns';
 import React, { useContext } from 'react';
-import { toast, Toaster } from 'react-hot-toast';
+import { toast } from 'react-hot-toast';
 import { AuthContext } from '../../../Contexts/AuthProvider';
 
 const AppointmentModal = ({ treatment, setTreatment, selectedDate, refetch }) => {

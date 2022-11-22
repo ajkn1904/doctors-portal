@@ -22,6 +22,7 @@ const AuthProvider = ({children}) => {
 
     const userSignOut = () => {
         setLoading(true)
+        localStorage.removeItem('DPtoken')
         return signOut (auth);
     }
 

@@ -9,7 +9,7 @@ const Login = () => {
 
     const { register, formState: {errors},handleSubmit } = useForm()
 
-    const {userSignIn, loading} = useContext(AuthContext)
+    const {userSignIn, loading, setLoading} = useContext(AuthContext)
     const [loginError, setLoginError] = useState('')
     const location = useLocation()
     const navigate = useNavigate()
@@ -42,6 +42,7 @@ const Login = () => {
         })
         .catch((error) => {
             setLoginError(error.message)
+            setLoading(false)
         })
     }
 
